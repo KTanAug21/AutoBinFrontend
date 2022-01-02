@@ -10,7 +10,7 @@ function App() {
     <ThemeProvider theme={ theme } >
       <div className="App">
         <GlobalStyles />
-        <Header />      
+        
         <Body />
         <Footer />
       </div>

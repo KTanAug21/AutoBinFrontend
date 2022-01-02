@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-    background: ${ ({theme}) => theme.colors.header };
-    padding: 40px 0;
+  background: ${ ({theme}) => theme.colors.header };
+  padding: 40px 20px;
+  display: flex;
+  font-family: 'Orbitron', sans-serif;
 `
 /**
  * display flex box
@@ -13,7 +15,6 @@ export const StyledHeader = styled.header`
 export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 40px;
 
   /* Once max-wdith is reached, stack the elements as row */
@@ -25,10 +26,13 @@ export const StyledNav = styled.nav`
 `
 
 export const StyledLogo = styled.img`
-  /* Once max-wdith is reached, add bottom margin because of row stack */
-  @media( max-width: ${({theme}) => theme.mobile} ){
-    margin-bottom: 40px;
-  }
+    border-radius: 10px 0 0 0;
+    align-self: flex-end;
+
+    /* Once max-wdith is reached, add bottom margin because of row stack */
+    @media( max-width: ${({theme}) => theme.mobile} ){
+        margin-bottom: 40px;
+    }
 `
 
 export const StyledImage = styled.img`

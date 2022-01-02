@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyledTable } from './styles/Table-styled';
 import MaterialTable from 'material-table';
 import tableIcons from "./MaterialTableIcons";
 import { FaTwitter, FaFacebook, FaLinkedin } from "react-icons/fa";

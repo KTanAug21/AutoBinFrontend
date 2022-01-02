@@ -2,17 +2,26 @@ import React from 'react'
 import { StyledBody } from './styles/Body-styled';
 import Table from './Table';
 import { useEffect, useState } from 'react';
+import SideNav from './SideNav';
 
 const Body = () => {
 
     // Data for table
     const [ orderList, setOrderList ] = useState([]);
-
+    const [ symbolList, setSymbolList] = useState([]);
+    
     const getOrderList = async() =>{
         console.log( 'Setting order list...');
         let data = await fetchDbOrderList();
         setOrderList( data.data );
     }
+
+    const getSymbolList = async() =>{
+        console.log( 'Setting order list...');
+        let data = await fetchSymbolList();
+        setOrderList( data.data );
+    }
+ 
 
     // Define data endpoint call
     const fetchDbOrderList = async()=>{
@@ -22,6 +31,13 @@ const Body = () => {
         return data;
     };
 
+    const fetchSymbolList = async()=>{
+        console.log('Getting symbol list...');
+        let res = await fetch('http://localhost:5000/pair-preference/list');
+        const data = await res.json() 
+        return data;
+    };
+ 
     const updateDbOrderDetail = async( data )=>{
         console.log( `Updating order list with data ` );
         console.log(data);
@@ -48,11 +64,15 @@ const Body = () => {
 
     // Call data endpoint on page load
     useEffect( () => {
+        
+        getSymbolList();
         getOrderList();
+
     },[]);
 
     return (
         <StyledBody>
+            <SideNav symbolList={symbolList}/>
             <Table data={orderList} setOrderList={setOrderList} updateDbOrderDetail={updateDbOrderDetail}/>
         </StyledBody>
     );
