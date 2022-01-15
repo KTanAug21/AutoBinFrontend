@@ -4,6 +4,7 @@ import { StyledNav } from "./styles/SideNav-styled";
 const SideNav = ({symbolList}) => {
     return (
         <StyledNav>
+            
             <Logo />
             <SymbolsNav symbolList={symbolList}/>
            

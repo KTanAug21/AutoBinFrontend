@@ -22,7 +22,6 @@ const Body = () => {
         setOrderList( data.data );
     }
  
-
     // Define data endpoint call
     const fetchDbOrderList = async()=>{
         console.log('Getting order list...');

@@ -5,10 +5,14 @@ export const StyledSymbolsNav = styled.div`
     background: ${({theme})=>theme.colors.header};
     border-radius: 10px 0 0 10px;
     padding: 20px;
+    align-self: flex-end;
+    max-width:300px;
 
 `;
 
 export const StyledButton = styled.button`
+   
+  
     border-radius: 10px 5px;
     border: none;
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
